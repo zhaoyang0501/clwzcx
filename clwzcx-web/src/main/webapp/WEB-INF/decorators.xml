@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<decorators defaultdir="/WEB-INF/jspview/decorators">
+
+    <!--main decorator-->
+    <decorator name="main" page="main.jsp">
+        <pattern>/newsdetail/*</pattern>
+        <pattern>/about</pattern>
+        <pattern>/news/*</pattern>
+    </decorator>
+
+ 	<decorator name="bbs" page="bbs.jsp">
+       <pattern>/index</pattern>
+        <pattern>/newsdetail</pattern>
+         <pattern>/addcar</pattern>
+       <pattern>/register</pattern>
+         <pattern>/center</pattern>
+            <pattern>/wz</pattern>
+              <pattern>/car</pattern>
+                 <pattern>/dropcar</pattern>
+            <pattern>/password</pattern>
+    </decorator>
+   
+    
+    <decorator name="center" page="center.jsp">
+          <pattern>/password</pattern>
+    </decorator>
+    
+    
+    
+</decorators>

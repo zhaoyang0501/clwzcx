@@ -1,0 +1,6 @@
+ package seed.sys.repository;
+
+import seed.common.repository.SimpleCurdRepository;
+import seed.sys.entity.File;
+public interface FileRepository   extends SimpleCurdRepository<File ,Long>{
+}

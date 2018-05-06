@@ -1,0 +1,74 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/plugins/simditor/simditor.css" />
+</head>
+<body >
+    <div class="wrapper wrapper-content animated fadeInRight">
+       <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox ">
+                 
+      		 	<div class="ibox-content">
+ 		 			<div class="row">
+                            <div class="col-sm-12 b-r">
+		                           <form class="form-horizontal" action="${pageContext.request.contextPath}/bbs/article/goupdate" method="post">
+		                           <input name='id' type="hidden" value="${article.id }"/>
+		                           	<table class='table table-bordered'>
+		                           		<thead>
+		                           		<tr style="text-align: center;" ><td colspan="6" ><h3>公告<h3></h3></td></tr>
+		                           		</thead>
+		                           		<tbody>
+		                           			<tr>
+		                           				<td>标题</td>
+		                           				<td> ${article.title }</td>
+		                           			</tr>
+											<tr>
+												<td>内容</td>
+		                           				<td> ${article.body }</td>
+		                           			</tr>
+		                           			
+		                           			
+		                           			<tr>
+		                           				<td colspan="6"> 
+		                           					 <div class="col-sm-4 col-sm-offset-2">
+		                                  			  		<button  class="btn btn-primary" type="submit" >关闭</button>
+		                               				 </div>
+		                           				</td>
+		                           			</tr>
+		                           		</tbody>
+		                           	</table>
+		                           	</form>
+                            </div>
+                        </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+   </div>
+   
+   
+   <script>
+    $(document).ready(function(){
+    	var editor=new Simditor({
+    				textarea:$("#body"),
+    				 upload : {
+    	    	            url : '${pageContext.request.contextPath}/simditorupload', //文件上传的接口地址
+    	    	            fileKey: 'file', //服务器端获取文件数据的参数名
+    	    	            leaveConfirm: '正在上传文件'
+    	    	        } 
+    			}
+    			);
+   });
+    </script>
+    
+      <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugins/simditor/module.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugins/simditor/uploader.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugins/simditor/hotkeys.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugins/simditor/simditor.js"></script>
+</body>
+
+</html>
